@@ -37,5 +37,6 @@ public class CursosController {
     @DeleteMapping("/{id}")
     public void deletarCurso(@PathVariable Long id) {
         cursosService.deletarCurso(id);
+        //
     }
 }
