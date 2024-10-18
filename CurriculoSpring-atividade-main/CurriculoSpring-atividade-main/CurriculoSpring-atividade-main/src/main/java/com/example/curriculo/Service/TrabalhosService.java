@@ -1,0 +1,58 @@
+package com.example.curriculo.Service;
+
+import com.example.curriculo.Model.Trabalhos;
+import com.example.curriculo.Repository.TrabalhosRepository;
+import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
+import java.util.Optional;
+
+@Component
+public class TrabalhosService {
+
+    @Autowired
+    private TrabalhosRepository trabalhosRepository;
+
+    public List<Trabalhos> getAllTrabalhos() {
+        return trabalhosRepository.findAll();
+    }
+
+    public Optional<Trabalhos> getTrabalhosById(Long id) {
+        return trabalhosRepository.findById(id);
+    }
+
+    @Transactional
+    public Trabalhos criarTrabalhos(Trabalhos trabalhos) {
+        return trabalhosRepository.save(trabalhos);
+    }
+
+    @Transactional
+    public Trabalhos atualizarTrabalhos(Long id, Trabalhos trabalhosDetails) throws Exception {
+        Optional<Trabalhos> Trabalhos = trabalhosRepository.findById(id);
+
+        if (Trabalhos.isPresent()) {
+            Trabalhos trabalhos = Trabalhos.get();
+
+            trabalhos.setNome(trabalhosDetails.getNome());
+            trabalhos.setQuantidade(trabalhosDetails.getQuantidade());
+            trabalhos.setTempo(trabalhosDetails.getTempo());
+            return trabalhosRepository.save(trabalhos);
+        }
+        else {
+            throw new Exception("Trabalhos não encontrado com o id: " + id);
+        }
+    }
+    @Transactional
+    public void deletarTrabalhos(@PathVariable Long id) {
+        Optional<Trabalhos> optionalTrabalhos = TrabalhosRepository.findById(id);
+
+        if (optionalTrabalhos.isPresent()) {
+            Trabalhos trabalhos= optionalTrabalhos.get();
+           trabalhosRepository.delete(trabalhos);
+        }
+    }
+
+}

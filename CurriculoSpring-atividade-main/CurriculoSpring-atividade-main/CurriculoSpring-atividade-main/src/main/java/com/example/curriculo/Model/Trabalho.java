@@ -5,13 +5,14 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "idiomas")
-public class Idiomas {
+@Table(name = "trabalho")
+public class Trabalho {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String nivel;
+    private int quantidade;
+    private int tempo;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
