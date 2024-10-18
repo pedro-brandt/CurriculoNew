@@ -47,7 +47,7 @@ public class TrabalhosService {
     }
     @Transactional
     public void deletarTrabalhos(@PathVariable Long id) {
-        Optional<Trabalhos> optionalTrabalhos = TrabalhosRepository.findById(id);
+        Optional<Trabalhos> optionalTrabalhos = trabalhosRepository.findById(id);
 
         if (optionalTrabalhos.isPresent()) {
             Trabalhos trabalhos= optionalTrabalhos.get();
