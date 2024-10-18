@@ -11,7 +11,7 @@ public class Trabalhos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private int quantidade;
+
     private int tempo;
 
     @ManyToOne

@@ -37,6 +37,7 @@ public class CursosController {
     @DeleteMapping("/{id}")
     public void deletarCurso(@PathVariable Long id) {
         cursosService.deletarCurso(id);
-        //
+//Controlle = gerencia o envio de informações enviadas ao banco
+//Controller = cria as URLs
     }
 }

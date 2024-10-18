@@ -37,7 +37,6 @@ public class TrabalhosService {
             Trabalhos trabalhos = Trabalhos.get();
 
             trabalhos.setNome(trabalhosDetails.getNome());
-            trabalhos.setQuantidade(trabalhosDetails.getQuantidade());
             trabalhos.setTempo(trabalhosDetails.getTempo());
             return trabalhosRepository.save(trabalhos);
         }

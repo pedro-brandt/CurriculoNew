@@ -12,7 +12,6 @@ public class Experiencias {
     private Long id;
     private String nome;
     private int tempo;
-    private int quantidade;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
