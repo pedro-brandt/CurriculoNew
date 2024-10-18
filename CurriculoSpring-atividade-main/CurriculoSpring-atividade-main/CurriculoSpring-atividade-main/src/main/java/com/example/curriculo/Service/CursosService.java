@@ -4,13 +4,13 @@ import com.example.curriculo.Model.Cursos;
 import com.example.curriculo.Repository.CursosRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Service
 public class CursosService {
 
     @Autowired
