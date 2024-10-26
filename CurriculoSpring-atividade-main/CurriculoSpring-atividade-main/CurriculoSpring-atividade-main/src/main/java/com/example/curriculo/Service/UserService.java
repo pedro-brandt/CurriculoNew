@@ -24,12 +24,12 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    @Transactional
+
     public User criarUser(User user) {
         return userRepository.save(user);
     }
 
-    @Transactional
+
     public User atualizarUser(Long id, User userDetails) throws Exception {
         Optional<User> User = userRepository.findById(id);
 
@@ -46,7 +46,7 @@ public class UserService {
             throw new Exception("Usuário não encontrado com o id: " + id);
         }
     }
-    @Transactional
+
     public void deletarUser(@PathVariable Long id) {
         Optional<User> optionalUser = userRepository.findById(id);
 

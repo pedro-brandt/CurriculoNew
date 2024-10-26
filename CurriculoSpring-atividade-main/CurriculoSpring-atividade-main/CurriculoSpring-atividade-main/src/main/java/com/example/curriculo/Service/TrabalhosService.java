@@ -24,12 +24,10 @@ public class TrabalhosService {
         return trabalhosRepository.findById(id);
     }
 
-    @Transactional
     public Trabalhos criarTrabalhos(Trabalhos trabalhos) {
         return trabalhosRepository.save(trabalhos);
     }
 
-    @Transactional
     public Trabalhos atualizarTrabalhos(Long id, Trabalhos trabalhosDetails) throws Exception {
         Optional<Trabalhos> Trabalhos = trabalhosRepository.findById(id);
 
@@ -44,7 +42,7 @@ public class TrabalhosService {
             throw new Exception("Trabalhos não encontrado com o id: " + id);
         }
     }
-    @Transactional
+
     public void deletarTrabalhos(@PathVariable Long id) {
         Optional<Trabalhos> optionalTrabalhos = trabalhosRepository.findById(id);
 

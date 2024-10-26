@@ -24,12 +24,12 @@ public class CursosService {
         return cursosRepository.findById(id);
     }
 
-    @Transactional
+
     public Cursos criarCurso(Cursos cursos) {
         return cursosRepository.save(cursos);
     }
 
-    @Transactional
+
     public Cursos atualizarCurso(Long id, Cursos cursosDetails) throws Exception {
         Optional<Cursos> Cursos = cursosRepository.findById(id);
 
@@ -47,7 +47,7 @@ public class CursosService {
             throw new Exception("Curso não encontrado com o id: " + id);
         }
     }
-    @Transactional
+
     public void deletarCurso(@PathVariable Long id) {
         Optional<Cursos> optionalCurso = cursosRepository.findById(id);
 

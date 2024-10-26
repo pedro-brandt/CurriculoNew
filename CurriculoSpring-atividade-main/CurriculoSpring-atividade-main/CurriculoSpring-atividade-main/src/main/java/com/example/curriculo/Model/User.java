@@ -22,6 +22,9 @@ public class User {
     private List<Cursos> courses = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Idiomas> languages = new ArrayList<>();
+    private List<Habilidades> habilidades = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Trabalhos> trabalhos = new ArrayList<>();
 
 }
