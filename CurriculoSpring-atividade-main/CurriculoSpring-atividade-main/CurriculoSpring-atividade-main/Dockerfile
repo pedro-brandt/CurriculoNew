@@ -7,4 +7,4 @@ FROM openjdk:21-jdk
 WORKDIR /app
 COPY --from=build ./app/target/*.jar ./curriculo*.jar
 EXPOSE 8080
-ENTRYPOINT java -jar curriculo*.jar
+ENTRYPOINT ["java", "-jar", "curriculo*.jar"]
